@@ -3,11 +3,11 @@ let totalPoints = 0;
 let hearts = 3;
 let wrongAttempts = 0;
 let timer;
-let gameTime = 60 * 60; // 1 hour timer (for testing, adjust as needed)
+let gameTime = 3 * 60; // 1 hour timer (for testing, adjust as needed)
 let currentRound = 0; // Start with round 0 (round 1 is actually round 0 in the array)
 let matchedCards = 0;
 let roundTimer;
-let roundTime = [30, 25, 25, 25]; // Waktu untuk setiap ronde, dalam detik
+let roundTime = [30, 25, 20, 20]; // Waktu untuk setiap ronde, dalam detik
 let flippedCards = [];
 let currentQuestionIndex = 0;
 const songClips = [
@@ -35,6 +35,54 @@ const triviaQuestions = [
     question: "Hasil dari 89 x 3 : 3 + 2 : 7 ?",
     correctAnswer: "13",
     options: ["9", "13", "10"],
+  },
+  {
+    question: "Siapa Orang Tercantik didunia ini?",
+    correctAnswer: "Kamu",
+    options: ["Han So Hee", "Kamu", "Han ji eun"],
+  },
+  {
+    question: "Kenapa kamu cantik banget woi?!?!",
+    correctAnswer: "Udah dari lahir :)",
+    options: ["Tanya aja ibu aku", "Udah dari lahir :)", "Gatauu"],
+  },
+  {
+    question:
+      "Kapan terakhir kali kamu membuat dunia tercengang dengan pesona kamu?",
+    correctAnswer: "Setiap saat, kan aku selalu menawan",
+    options: [
+      "Setiap saat, kan aku selalu menawan",
+      "Waktu bangun pagi",
+      "Saat di depan cermin",
+    ],
+  },
+  {
+    question: "Kamu tahu nggak, tiap kali kamu senyum dunia jadi lebih indah?",
+    correctAnswer: "Iya, karena senyuman kamu itu ajaib",
+    options: [
+      "Iya, karena senyuman kamu itu ajaib",
+      "Enggak, emang iya?",
+      "Karena aku senang lihat kamu",
+    ],
+  },
+  {
+    question: "Apa yang membuat aku nggak bisa berhenti mikirin kamu?",
+    correctAnswer: "Karena kamu ada di setiap pikiranku",
+    options: [
+      "Karena kamu ada di setiap pikiranku",
+      "Karena kamu sempurna",
+      "Karena kamu luar biasa",
+    ],
+  },
+  {
+    question:
+      "Jangan pikirin aku, tapi kok tiap detik kamu selalu muncul di pikiranku?",
+    correctAnswer: "Karena kamu terlalu istimewa untuk dilupakan",
+    options: [
+      "Karena kamu terlalu istimewa untuk dilupakan",
+      "Aku juga nggak tahu",
+      "Karena aku nggak bisa berhenti mikirin kamu",
+    ],
   },
 ];
 
@@ -248,10 +296,10 @@ function nextMission(game) {
       showGame("karaoke");
     }
   } else if (game === "Trivia") {
-    currentMission = "Karaoke";
+    currentMission = "Memory";
     document.getElementById("mission-text").innerText =
       "Find all matching pairs in the Memory Match game!";
-    showGame("karaoke");
+    showGame("memory-game");
     generateAndShuffleCards(); // Start the Memory Match game
   }
 }
