@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Games - Mission Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Mini Games Collection</h1>
+      <p>Complete missions to unlock rewards!</p>
+    </div>
+
+    <div id="mission-container">
+      <h2>Current Mission:</h2>
+      <p id="mission-text">
+        Complete the trivia quiz by answering 5 questions correctly!
+      </p>
+      <button id="start-quiz" onclick="startTriviaGame()">
+        Start Trivia Quiz
+      </button>
+    </div>
+
+    <!-- Trivia Game -->
+    <div id="quiz-container" class="game-container" style="display: none">
+      <h2 id="quiz-question">Loading Question...</h2>
+      <div id="answers-container"></div>
+      <!-- Tempat untuk tombol jawaban -->
+      <div id="quiz-result"></div>
+      <!-- Tempat untuk menunjukkan hasil jawaban -->
+
+      <button
+        id="next-mission"
+        style="display: none"
+        onclick="nextMission('Trivia')"
+      >
+        Next Mission
+      </button>
+
+      <div id="hearts">
+        <img src="heart.png" id="heart1" class="heart" />
+        <img src="heart.png" id="heart2" class="heart" />
+        <img src="heart.png" id="heart3" class="heart" />
+      </div>
+    </div>
+
+    <!-- Memory Match Game -->
+    <div id="timer">60:00</div>
+    <!-- Timer display -->
+    <div id="round-info" style="display: none">Round:</div>
+    <div id="timer-info" style="display: none">Time left:</div>
+
+    <div id="memory-game" class="game-container" style="display: none">
+      <h3>Memory Match - Find the pairs!</h3>
+      <div id="game-board" class="board"></div>
+      <!-- Game board for the cards -->
+      <button
+        id="memory-next"
+        style="display: none"
+        onclick="nextMission('Memory')"
+      >
+        Next Mission
+      </button>
+    </div>
+
+    <!-- Guest Song Challenge -->
+    <div id="karaoke" class="game-container" style="display: none">
+      <h3>Tebak lagu dari klip ini 🎶</h3>
+      <audio id="audio" controls>
+        <source src="" type="audio/mp3" />
+      </audio>
+
+      <div id="answers-container"></div>
+      <!-- Untuk pilihan jawaban -->
+
+      <div id="quiz-result"></div>
+      <!-- Menampilkan hasil tebakannya -->
+
+      <button
+        id="guest-song-next"
+        style="display: none"
+        onclick="nextMission('Karaoke')"
+      >
+        Next Mission
+      </button>
+    </div>
+
+    <footer>
+      <p>Created with <span class="heart">&#9829;</span> by Naufal</p>
+    </footer>
+    <script src="script.js"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/61bb2b3f80b2296cfdd2072e/1fn1i1se1";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+  </body>
+</html>
